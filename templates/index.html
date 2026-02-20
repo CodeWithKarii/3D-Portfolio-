@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- Matrix Pop-up -->
+  <div id="matrix-popup">
+    <div class="matrix-content">
+      <h2 class="matrix-text">The Portal</h2>
+      <button class="matrix-btn" id="enter-btn">Start</button>
+    </div>
+  </div>
+
+  <!-- Loader Screen -->
+  <div id="loader">
+    <div class="loader-content">
+      <div class="spinner"></div>
+      <h2>Welcome</h2>
+      <p>Loading Portal...</p>
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3D Canvas Background -->
+  <canvas id="space-canvas"></canvas>
+
+  <div id="main-content">
+    <img id="profile-pic" src="{{ url_for('static', filename='profile.jpg') }}" alt="Profile Picture">
+    <h1>BAKARI WALTON</h1>
+   
+    <button class="matrix-btn"  onclick="contactAlert()"> OPEN PORTFOLIO</button>
+  </div>
+
+  <!-- Hidden audio for intro -->
+  <audio id="intro-audio" src="{{ url_for('static', filename='intro.mp3') }}"></audio>
+
+  <!-- Load scripts at end of body -->
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
