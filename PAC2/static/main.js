@@ -18,7 +18,7 @@ function playClickSound() {
 }
 
 // Function to navigate to portfolio
-function contactAlert() {
+function goToPortfolio() {
   playClickSound();
   
   // Show loader
@@ -44,7 +44,7 @@ function contactAlert() {
 
     setTimeout(() => {
       // Navigate to portfolio page via Python Flask route
-      window.location.href = '/go-portfolio';
+      window.location.href = '/portfolio';
     }, 500);
   }, 3000);
 }

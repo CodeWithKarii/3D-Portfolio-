@@ -94,6 +94,32 @@
         </div>
       </section>
 
+
+
+
+       <!--contact me section -->
+       <section class="portfolio-section">
+        <h2>Contact Me</h2>
+        <form class="skill-grid" method="POST"  action="{{ url_for('submit') }}">
+          <input class="skill" type="text" name="name" placeholder="Your Name" required>
+          <input class="skill" type="email" name="email" placeholder="Your Email" required>
+          <button class="skill" type="submit">Send</button>
+        </form>
+      </section>
+      
+     <!-- Flash messages -->
+       {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul>
+          {% for category, message in messages %}
+            <li style="color: {% if category == 'error' %} red {% else %} green {% endif %};">
+              {{ message }}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
       <!-- Navigation -->
       <div class="portfolio-nav">
         <button class="back-btn" onclick="goHome()">← Back to Home</button>
@@ -104,19 +130,6 @@
   <!-- Hidden audio for portfolio music -->
   <audio id="intro-audio" src="{{ url_for('static', filename='portfolio.mp3') }}"></audio>
 
-  <!-- Skill Modal Pop-up -->
-  <div id="skill-modal" class="skill-modal">
-    <div class="skill-modal-content">
-      <span class="close-modal" onclick="closeSkillModal()">&times;</span>
-      <div class="skill-modal-header">
-        <h2 id="modal-skill-name"></h2>
-      </div>
-      <div class="skill-modal-body">
-        <img id="modal-skill-image" src="" alt="Skill Image" class="skill-modal-image">
-        <p id="modal-skill-description"></p>
-      </div>
-    </div>
-  </div>
 
   <!-- Load scripts at end of body -->
   <script src="{{ url_for('static', filename='main.js') }}"></script>

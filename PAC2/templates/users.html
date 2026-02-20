@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registered Users</title>
+</head>
+<body>
+    <h1>Registered Users</h1>
+
+    {% if users %}
+        <table border="1" cellpadding="5">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+            {% for user in users %}
+            <tr>
+                <td>{{ user[0] }}</td>
+                <td>{{ user[1] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No users registered yet.</p>
+    {% endif %}
+
+    <br>
+    <a href="{{ url_for('home') }}">Go back</a>
+</body>
+</html>
