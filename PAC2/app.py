@@ -17,6 +17,8 @@ def go_home():
 @app.route("/go-portfolio")
 def go_portfolio():
     return redirect(url_for("portfolio"))
+if __name__ == "__main__":
+    app.run(debug=True)
 
 
 
